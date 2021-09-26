@@ -8,13 +8,13 @@ private:
 	std::string last_name;
 	std::string nickename;
 	std::string dark_scret;
-	int phone_number;
+	long long phone_number;
 public:
 	void promt()
 	{
 		std::cout << "📖 > ";
 	}
-	void set(std::string f_n, std::string l_n, std::string nk_n, std::string ds, int pn)
+	void set(std::string f_n, std::string l_n, std::string nk_n, std::string ds, long long pn)
 	{
 		first_name = f_n;
 		last_name = l_n;
@@ -44,6 +44,23 @@ public:
 	}
 };
 
+std::string subnoalloc(std::string s)
+{
+	int  i = 10;
+	if(s.length() > 10)
+	{
+		s[9] = '.';
+		while(s[i])
+		{
+			s[i] = '\0';
+			i++;
+		}
+		return (s);
+	}
+	else
+		return (s);
+}
+
 void clear_all(std::string *f_n, std::string *l_n, std::string *ds, std::string *nk_n, std::string *ph_n)
 {
 	f_n->clear();
@@ -55,7 +72,7 @@ void clear_all(std::string *f_n, std::string *l_n, std::string *ds, std::string 
 
 int main()
 {
-	Contact users[7];
+	Contact users[9];
 	std::string cmd;
 	std::string f_n;
 	std::string l_n;
@@ -108,38 +125,52 @@ int main()
 					}
 				}
 			}
-			if (nc <= 7)
-				users[nc].set(f_n, l_n, nk_n, ds, stoi(ph_n));
-			if (nc > 7)
-				users[0].set(f_n, l_n, nk_n, ds, stoi(ph_n));
+			if (nc < 8)
+			{
+				users[nc].set(f_n, l_n, nk_n, ds, stoll(ph_n));
+				ph_n.clear();
+			}
+			if (nc >= 8)
+			{
+				users[0].getf_n().clear();
+				users[0].getl_n().clear();
+				users[0].getnk_n().clear();
+				// users[0].getp_n().clear();
+				users[0].getds().clear();
+				users[0].set(f_n, l_n, nk_n, ds, stoll(ph_n));
+			}
 			nc++;
 		}
 		else if (cmd == "SEARCH")
 		{
+			int a;
 			std::string fn;
 			std::string ln;
 			std::string nk;
 			std::cout << std::setw(10)
 					<< "index" << "|" << "first name" << "|" << std::setw(10)
 					<< "last name" << "|" <<std::setw(10) << "nickname" << "|\n";
-			for(int i =0; i < nc; i++)
+			if (nc <= 7)
+				a = nc - 1;
+			else
+				a = 7;
+			for(int i = 0; i <= a; i++)
 			{
 				
 				if (users[i].getf_n().length() > 10)
-					fn = users[i].getf_n().replace(9,1,".", 0, 1).substr(0,9);
+					fn = subnoalloc(users[i].getf_n());
 				else
 					fn = users[i].getf_n();
 				if (users[i].getl_n().length() > 10)
-					ln = users[i].getl_n().replace(9,1,".", 0, 1).substr(0,9);
+					ln = subnoalloc(users[i].getl_n());
 				else
 					ln = users[i].getl_n();
 				if (users[i].getnk_n().length() > 10)
-					nk = users[i].getnk_n().replace(9,1,".", 0, 1).substr(0,9);
+					nk = subnoalloc(users[i].getnk_n());
 				else
 					nk = users[i].getnk_n();
 				std::cout << std::right << std::setw(10) << i << "|" << std::setw(10) << fn << "|"
 						<< std::setw(10) << ln << "|" << std::setw(10) << nk << "|\n";
-			
 			}
 			while(1)
 			{
@@ -163,7 +194,7 @@ int main()
 					num =  stoi(in);
 				else
 					break;
-				if (num > nc || num < 0)
+				if (num > 7 || num < 0)
 					break;
 				else
 					{
@@ -171,15 +202,15 @@ int main()
 								<< "index" << "|" << "first name" << "|" << std::setw(10)
 								<< "last name" << "|" <<std::setw(10) << "nickname" << "|\n";
 						if (users[num].getf_n().length() > 10)
-							fn = users[num].getf_n().replace(9,1,".", 0, 1).substr(0,9);
+							fn = subnoalloc(users[num].getf_n());
 						else
 							fn = users[num].getf_n();
 						if (users[num].getl_n().length() > 10)
-							ln = users[num].getl_n().replace(9,1,".", 0, 1).substr(0,9);
+							ln = subnoalloc(users[num].getl_n());
 						else
 							ln = users[num].getl_n();
 						if (users[num].getnk_n().length() > 10)
-							nk = users[num].getnk_n().replace(9,1,".", 0, 1).substr(0,9);
+							nk = subnoalloc(users[num].getnk_n());
 						else
 							nk = users[num].getnk_n();
 						std::cout << std::right << std::setw(10) << num << "|" << std::setw(10) << fn << "|"
