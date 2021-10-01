@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <ctime>
 #include "Account.hpp"
 
 int Account::getNbAccounts(void)
@@ -39,20 +40,23 @@ Account::Account(int initial_deposit)
 	_totalAmount += initial_deposit;
 	_nbDeposits = 0;
 	_nbWithdrawals = 0;
-	std::cout << "[19920104_091532] " << "index:" << _accountIndex << ";"
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";"
 			  << "amount:" << _amount << ";" << "created\n";
 }
 
 void Account::displayAccountsInfos( void )
 {
-	std::cout << "[19920104_091532] " << "accounts:" << _nbAccounts << ";"
+	_displayTimestamp();
+	std::cout << "accounts:" << _nbAccounts << ";"
 			  << "total:" << _totalAmount << ";" << "deposits:" << _totalNbDeposits
 			  << ";" << "withdrawals:" << _totalNbWithdrawals << "\n";
 }
 
 void Account::displayStatus( void )const
 {
-	std::cout << "[19920104_091532] " << "index:" << _accountIndex << ";"
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";"
 			  << "amount:" << _amount << ";" << "deposits:" << _nbDeposits
 			  << ";" << "withdrawals:" << _nbWithdrawals << "\n";
 
@@ -61,7 +65,8 @@ void	Account::makeDeposit( int deposit )
 {
 	_nbDeposits++;
 	_totalNbDeposits++;
-	std::cout << "[19920104_091532] " << "index:" << _accountIndex << ";"
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";"
 			  << "p_amount:" << _amount << ";" << "deposit:" << deposit
 			  << ";" << "amount:" << (_amount + deposit) << ";"
 			  << "nb_deposits:" << _nbDeposits << "\n";
@@ -71,7 +76,8 @@ void	Account::makeDeposit( int deposit )
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
-	std::cout << "[19920104_091532] " << "index:" << _accountIndex << ";"
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";"
 			  << "p_amount:" << _amount << ";" << "withdrawal:";
 	if (withdrawal > _amount)
 		std::cout << "refused\n";
@@ -88,9 +94,21 @@ bool	Account::makeWithdrawal( int withdrawal )
 
 Account::~Account()
 {
-	std::cout << "[19920104_091532] " << "index:" << _accountIndex << ";"
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";"
 			  << "amount:" << _amount << ";"
 			  << "closed\n";
 };
 
-
+void Account::_displayTimestamp(void)
+{
+	time_t ttime = time(0);
+	tm *local_time = localtime(&ttime);
+	std::cout << 1900 + local_time->tm_year;
+	std::cout << std::setw(2) << std::setfill('0') << local_time->tm_mon;
+	std::cout << std::setw(2) << std::setfill('0') << local_time->tm_mday;
+	std::cout << "_";
+	std::cout << std::setw(2) << std::setfill('0') << 1 + local_time->tm_hour;
+	std::cout << std::setw(2) << std::setfill('0') << 1 + local_time->tm_min;
+    std::cout << std::setw(2) << std::setfill('0')<< 1 + local_time->tm_sec << " ";
+}
