@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int main()
 {
@@ -12,6 +12,7 @@ int main()
 	std::string nk_n;
 	std::string ph_n;
 	long nc = 0;
+	int max_nc = 0;
 	std::cout << "-----------------------\nthe command can use is: \n*ADD\n*SEARCH\n*EXIT\n------------" << std::endl;
 	while (1)
 	{
@@ -48,7 +49,8 @@ int main()
 			{
 				std::cout << "Enter your phone number: ";
 				std::getline(std::cin, ph_n);
-				for (int i= 0; i < ph_n.length(); i++)
+				int ln = ph_n.length();
+				for (int i= 0; i < ln; i++)
 				{
 					if (std::isdigit(ph_n[i]) == 0)
 					{
@@ -57,38 +59,31 @@ int main()
 					}
 				}
 			}
+			if (nc >= 8)
+				nc = 0;
 			if (nc < 8)
 			{
+				users[nc].getf_n().clear();
+				users[nc].getl_n().clear();
+				users[nc].getnk_n().clear();
+				users[nc].getds().clear();
 				users[nc].set(f_n, l_n, nk_n, ds, stoll(ph_n));
 				ph_n.clear();
 			}
-			if (nc >= 8)
-			{
-				users[0].getf_n().clear();
-				users[0].getl_n().clear();
-				users[0].getnk_n().clear();
-				// users[0].getp_n().clear();
-				users[0].getds().clear();
-				users[0].set(f_n, l_n, nk_n, ds, stoll(ph_n));
-			}
 			nc++;
+			if (max_nc < 8)
+				max_nc++;
 		}
 		else if (cmd == "SEARCH")
 		{
-			int a;
 			std::string fn;
 			std::string ln;
 			std::string nk;
 			std::cout << std::setw(10)
 					<< "index" << "|" << "first name" << "|" << std::setw(10)
 					<< "last name" << "|" <<std::setw(10) << "nickname" << "|\n";
-			if (nc <= 7)
-				a = nc - 1;
-			else
-				a = 7;
-			for(int i = 0; i <= a; i++)
+			for(int i = 0; i < max_nc; i++)
 			{
-				
 				if (users[i].getf_n().length() > 10)
 					fn = subnoalloc(users[i].getf_n());
 				else
@@ -113,7 +108,8 @@ int main()
 				{
 					std::cout << "index> ";
 					std::getline(std::cin, in);
-					for (int i = 0; i < in.length(); i++)
+					int lin = in.length();
+					for (int i = 0; i < lin; i++)
 					{
 						if (std::isdigit(in[i]) == 0)
 						{
@@ -125,14 +121,25 @@ int main()
 				if (c == 1)
 					num =  stoi(in);
 				else
+				{
+					std::cout << "Error: this input not your book" << "\n";
 					break;
-				if (num > 7 || num < 0)
+				}
+				if (num > 7 || num < 0 || num > max_nc)
+				{
+					std::cout << "Error: this input not your book" << "\n";
 					break;
+				}
 				else
 					{
+						if (users[num].getf_n().empty() == true)
+						{
+							std::cout << "Error: this input not your book" << "\n";
+							break;
+						}
 						std::cout << std::setw(10)
 								<< "index" << "|" << "first name" << "|" << std::setw(10)
-								<< "last name" << "|" <<std::setw(10) << "nickname" << "|\n";
+								<< "last name" << "|" << std::setw(10) << "nickname" << "|\n";
 						if (users[num].getf_n().length() > 10)
 							fn = subnoalloc(users[num].getf_n());
 						else

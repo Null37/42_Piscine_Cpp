@@ -1,13 +1,13 @@
 #include <iostream>
 #include <iomanip>
+#include "PhoneBook.hpp"
 
-
-void promt()
+void Contact::promt()
 {
 	std::cout << "📖 > ";
 }
 
-void set(std::string f_n, std::string l_n, std::string nk_n, std::string ds, long long pn)
+void Contact::set(std::string f_n, std::string l_n, std::string nk_n, std::string ds, long long pn)
 {
 	first_name = f_n;
 	last_name = l_n;
@@ -16,27 +16,27 @@ void set(std::string f_n, std::string l_n, std::string nk_n, std::string ds, lon
 	phone_number = pn;
 }
 
-std::string getf_n() // git fisrt name
+std::string Contact::getf_n() // git fisrt name
 {
 	return first_name;
 }
 
-std::string getl_n() // get last name
+std::string Contact::getl_n() // get last name
 {
 	return last_name;
 }
 
-std::string getnk_n()//get nake name
+std::string Contact::getnk_n()//get nake name
 {
 	return nickename;
 }
 
-std::string getds()// get dark scret
+std::string Contact::getds()// get dark scret
 {
 	return dark_scret;
 }
 
-int getp_n()//get phone number
+int Contact::getp_n()//get phone number
 {
 	return phone_number;
 }
