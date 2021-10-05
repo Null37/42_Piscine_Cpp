@@ -18,6 +18,11 @@ int main()
 	{
 		users->promt();
 		std::getline(std::cin,cmd);
+		if (std::cin.eof())
+		{
+			std::cout << "EOF\n";
+			exit(0);
+		}
 		clear_all(&f_n, &l_n, &ds, &nk_n, &ph_n);
 		if (cmd == "ADD")
 		{

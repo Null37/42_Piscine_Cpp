@@ -19,6 +19,12 @@ public:
     int getp_n( void ); //get phone number
 };
 
+class book
+{
+public:
+
+}
+
 void clear_all(std::string *f_n, std::string *l_n, std::string *ds, std::string *nk_n, std::string *ph_n);
 std::string subnoalloc(std::string s);; // subster but not use alloc
 
