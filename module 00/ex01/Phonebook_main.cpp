@@ -1,10 +1,19 @@
-#include <iostream>
-#include <iomanip>
 #include "PhoneBook.hpp"
+#include "Contact.hpp"
+
+void err_exit()
+{
+	if (std::cin.eof())
+	{
+		std::cout << "\n 📕 BYE (´^ω^)ノ\n";
+		exit(0);
+	}
+}
 
 int main()
 {
-	Contact users[9];
+	PhoneBook book;
+
 	std::string cmd;
 	std::string f_n;
 	std::string l_n;
@@ -16,13 +25,9 @@ int main()
 	std::cout << "-----------------------\nthe command can use is: \n*ADD\n*SEARCH\n*EXIT\n------------" << std::endl;
 	while (1)
 	{
-		users->promt();
+		book.promt();
 		std::getline(std::cin,cmd);
-		if (std::cin.eof())
-		{
-			std::cout << "EOF\n";
-			exit(0);
-		}
+		err_exit();
 		clear_all(&f_n, &l_n, &ds, &nk_n, &ph_n);
 		if (cmd == "ADD")
 		{
@@ -31,29 +36,34 @@ int main()
 				std::cout << "Enter your first name: " ;
 				f_n.clear();
 				std::getline(std::cin,f_n);
+				err_exit();
 			}
 			while (l_n.length() <= 0)
 			{
 				std::cout << "Enter your last name: " ;
 				l_n.clear();
 				std::getline(std::cin, l_n);
+				err_exit();
 			}
 			while (nk_n.length() <= 0)
 			{
 				std::cout << "Enter your nackename: " ;
 				nk_n.clear();
 				std::getline(std::cin, nk_n);
+				err_exit();
 			}
 			while (ds.length() <=0)
 			{
 				std::cout << "what is your dark scret: " ;
 				ds.clear();
 				std::getline(std::cin, ds);
+				err_exit();
 			}
 			while (ph_n.length() <= 0)
 			{
 				std::cout << "Enter your phone number: ";
 				std::getline(std::cin, ph_n);
+				err_exit();
 				int ln = ph_n.length();
 				for (int i= 0; i < ln; i++)
 				{
@@ -68,11 +78,11 @@ int main()
 				nc = 0;
 			if (nc < 8)
 			{
-				users[nc].getf_n().clear();
-				users[nc].getl_n().clear();
-				users[nc].getnk_n().clear();
-				users[nc].getds().clear();
-				users[nc].set(f_n, l_n, nk_n, ds, stoll(ph_n));
+				book.get_contact(nc).getf_n().clear();
+				book.get_contact(nc).getl_n().clear();
+				book.get_contact(nc).getnk_n().clear();
+				book.get_contact(nc).getds().clear();
+				book.get_contact(nc).set(f_n, l_n, nk_n, ds, stoll(ph_n));
 				ph_n.clear();
 			}
 			nc++;
@@ -89,18 +99,18 @@ int main()
 					<< "last name" << "|" <<std::setw(10) << "nickname" << "|\n";
 			for(int i = 0; i < max_nc; i++)
 			{
-				if (users[i].getf_n().length() > 10)
-					fn = subnoalloc(users[i].getf_n());
+				if (book.get_contact(i).getf_n().length() > 10)
+					fn = subnoalloc(book.get_contact(i).getf_n());
 				else
-					fn = users[i].getf_n();
-				if (users[i].getl_n().length() > 10)
-					ln = subnoalloc(users[i].getl_n());
+					fn = book.get_contact(i).getf_n();
+				if (book.get_contact(i).getl_n().length() > 10)
+					ln = subnoalloc(book.get_contact(i).getl_n());
 				else
-					ln = users[i].getl_n();
-				if (users[i].getnk_n().length() > 10)
-					nk = subnoalloc(users[i].getnk_n());
+					ln = book.get_contact(i).getl_n();
+				if (book.get_contact(i).getnk_n().length() > 10)
+					nk = subnoalloc(book.get_contact(i).getnk_n());
 				else
-					nk = users[i].getnk_n();
+					nk = book.get_contact(i).getnk_n();
 				std::cout << std::right << std::setw(10) << i << "|" << std::setw(10) << fn << "|"
 						<< std::setw(10) << ln << "|" << std::setw(10) << nk << "|\n";
 			}
@@ -113,6 +123,7 @@ int main()
 				{
 					std::cout << "index> ";
 					std::getline(std::cin, in);
+					err_exit();
 					int lin = in.length();
 					for (int i = 0; i < lin; i++)
 					{
@@ -127,45 +138,33 @@ int main()
 					num =  stoi(in);
 				else
 				{
-					std::cout << "Error: this input not your book" << "\n";
+					std::cout << "Error: this input not in your book" << "\n";
 					break;
 				}
 				if (num > 7 || num < 0 || num > max_nc)
 				{
-					std::cout << "Error: this input not your book" << "\n";
+					std::cout << "Error: this input not IN your book" << "\n";
 					break;
 				}
 				else
 					{
-						if (users[num].getf_n().empty() == true)
+						if (book.get_contact(num).getf_n().empty() == true)
 						{
-							std::cout << "Error: this input not your book" << "\n";
+							std::cout << "Error: this input not in your book" << "\n";
 							break;
 						}
-						std::cout << std::setw(10)
-								<< "index" << "|" << "first name" << "|" << std::setw(10)
-								<< "last name" << "|" << std::setw(10) << "nickname" << "|\n";
-						if (users[num].getf_n().length() > 10)
-							fn = subnoalloc(users[num].getf_n());
-						else
-							fn = users[num].getf_n();
-						if (users[num].getl_n().length() > 10)
-							ln = subnoalloc(users[num].getl_n());
-						else
-							ln = users[num].getl_n();
-						if (users[num].getnk_n().length() > 10)
-							nk = subnoalloc(users[num].getnk_n());
-						else
-							nk = users[num].getnk_n();
-						std::cout << std::right << std::setw(10) << num << "|" << std::setw(10) << fn << "|"
-								<< std::setw(10) << ln << "|" << std::setw(10) << nk << "|\n";
+						std::cout << "first name : " << book.get_contact(num).getf_n() << "\n"
+								<< "last name: " << book.get_contact(num).getl_n() << "\n"
+								<< "nickname: " << book.get_contact(num).getnk_n() << "\n"
+								<< "phone number: " << book.get_contact(num).getp_n() << "\n"
+								<< "darkest secret : " << book.get_contact(num).getds() << "\n";
 					}
 				in.clear();
 			}
 		}
 		else if (cmd == "EXIT")
 		{
-			std::cout << "exit📕\n";
+			std::cout << "📕 BYE (´^ω^)ノ\n";
 			exit(0);
 		}
 	}

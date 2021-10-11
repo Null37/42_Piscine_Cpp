@@ -1,10 +1,10 @@
-NAME = PhoneBook
+NAME = megaphone
 
 FLAGS = -Wall -Wextra -Werror
 
 CP = clang++
 
-SRC = PhoneBook_main.cpp PhoneBook.cpp Contact.cpp
+SRC = megaphone.cpp
 
 all: $(NAME)
 
