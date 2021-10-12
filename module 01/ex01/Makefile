@@ -1,6 +1,6 @@
 NAME = Zombie
 
-SRC = main.cpp Zombie.cpp randomChump.cpp newZombie.cpp
+SRC = main.cpp 
 
 FLAGS = -Wall -Wextra -Werror
 

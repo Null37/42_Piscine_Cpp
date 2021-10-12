@@ -1,9 +1,14 @@
-#include "zombie.hpp"
+#include "Zombie.hpp"
 #include <iostream>
 
 int  main()
 {
     Zombie z = Zombie("kat");
-    z.randomChump("ls");
+    Zombie *s;
+    randomChump("ls");
+    s = newZombie("batata");
+    if (s == NULL)
+        return 1;
+    delete s;
     return 0;
 }

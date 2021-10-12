@@ -16,3 +16,13 @@ Zombie::~Zombie()
 {
     std::cout << "hooray" << " " << "<" << name << ">" << " die" << "\n";
 }
+
+void Zombie::set(std::string na)
+{
+    this->name =  na;
+}
+
+std::string Zombie::get()
+{
+    return (this->name);
+}
