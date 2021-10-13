@@ -1,6 +1,6 @@
 NAME = Zombie
 
-SRC = main.cpp 
+SRC = main.cpp Zombie.cpp ZombieHorde.cpp
 
 FLAGS = -Wall -Wextra -Werror
 
