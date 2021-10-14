@@ -1,3 +1,5 @@
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
 class HumanA
 {
@@ -7,3 +9,5 @@ private:
 public:
     void attack( void );
 };
+
+#endif
