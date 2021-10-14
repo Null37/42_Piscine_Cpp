@@ -1,10 +1,14 @@
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
 #include "Weapon.hpp"
 
 class HumanB
 {
 private:
-        Weapon we;
-        std::string cal;
+        Weapon _wep;
+        std::string _hunmB;
 public:
     void attack( void );
 };
+
+#endif
