@@ -8,9 +8,9 @@ private:
     std::string _wp;
 public:
     const std::string& get( void );
-    void set(std::string st);
+    void setType(std::string st);
     Weapon(std::string type);
-    ~Weapon(void){};
+    ~Weapon(void);
 };
 
 

@@ -9,7 +9,12 @@ const std::string& Weapon::get( void )
 {
     return _wp;
 }
-void Weapon::set(std::string st)
+void Weapon::setType(std::string st)
 {
     _wp = st;
+}
+
+Weapon::~Weapon( void )
+{
+    ;
 }

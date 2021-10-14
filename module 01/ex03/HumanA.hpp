@@ -10,7 +10,7 @@ private:
 public:
     void attack( void );
     HumanA(std::string name, Weapon& wp);
-    ~HumanA( void ){};
+    ~HumanA( void );
 };
 
 #endif
