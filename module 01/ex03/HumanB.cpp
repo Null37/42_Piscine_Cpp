@@ -3,7 +3,7 @@
 
 void HumanB::attack(void)
 {
-    std::cout << _hunmB <<  " attacks with his " << _wep.get() << "\n";
+    std::cout << _hunmB <<  " attacks with his " << _wep->get() << "\n";
 }
 
 HumanB::HumanB(std::string str)
@@ -14,4 +14,9 @@ HumanB::HumanB(std::string str)
 HumanB::~HumanB()
 {
     ;
+}
+
+void HumanB::setWeapon(Weapon wp)
+{
+    _wep = &wp;
 }
