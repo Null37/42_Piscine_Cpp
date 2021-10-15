@@ -5,7 +5,7 @@
 class HumanA
 {
 private:
-        Weapon _wep;
+        Weapon& _wep;
         std::string _hunmA;
 public:
     void attack( void );

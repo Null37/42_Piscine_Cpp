@@ -12,6 +12,7 @@ const std::string& Weapon::get( void )
 void Weapon::setType(std::string st)
 {
     _wp = st;
+    std::cout << "han " << _wp << "\n";
 }
 
 Weapon::~Weapon( void )

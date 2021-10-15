@@ -9,6 +9,8 @@ private:
         std::string _hunmB;
 public:
     void attack( void );
+    HumanB(std::string str);
+    ~HumanB();
 };
 
 #endif
