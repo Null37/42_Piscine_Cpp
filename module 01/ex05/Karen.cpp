@@ -27,10 +27,32 @@ int     get_ind(std::string level)
     return ((int)level[0]);
 }
 
-typedef  void (Karen::*ll)(); 
 // enum functions{DEBUG, INFO, WARNING, ERROR};
-std::string cmd[4]={"DEBUG", "INFO", "WARNING", "ERROR"};
 void Karen::complain( std::string level)
+{
+    std::string cmd[4]={"DEBUG", "INFO", "WARNING", "ERROR"};
+
+    void (Karen::*ptr[4]) ();
+
+    (ptr[0]) = &Karen::debug;
+    (ptr[1]) = &Karen::info;
+    (ptr[2]) = &Karen::warning;
+    (ptr[3]) = &Karen::error;
+
+    int i;
+
+    i = 0;
+
+    while (i < 4)
+    {
+        while (cmd[i] == level)
+        {
+            (this->*ptr[i]) ();
+            break ;
+        }
+        i++;
+    }
+
 // {
 //     Karen::[4]= 
 //     {
@@ -39,12 +61,12 @@ void Karen::complain( std::string level)
 //         &Karen::warning,
 //         &Karen::error
 //     };
-    this->x = &Karen::debug;
-    for(int i = 0; i <= 3; i++)
-    {
-        if (level == cmd[i])
-            (this->*(x))();
-    }
+    // this->x = &Karen::debug;
+    // for(int i = 0; i <= 3; i++)
+    // {
+    //     if (level == cmd[i])
+    //         (this->*(x))();
+    // }
     // switch (level == "DEBUG" || level == "INFO" || level == "WARNING" || level == "ERROR")
     // {
     //     sda = (level == "DEBUG");

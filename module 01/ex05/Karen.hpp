@@ -11,8 +11,7 @@ private:
     void warning( void );
     void error( void );
 public:
-    typedef  void (Karen::*ll)(); 
-    ll x;
+    void (Karen::*ptr[4]) ();
     void complain( std::string level );
 };
 
