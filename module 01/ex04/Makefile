@@ -15,6 +15,6 @@ clean:
 	@echo "no *.o"
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(NAME) *.replace
 
 re: fclean all
