@@ -10,7 +10,7 @@ Fixed::Fixed( void )
 
 Fixed::~Fixed( void )
 {
-    ;
+    std::cout << "Destructor called" << "\n";
 }
 
 Fixed::Fixed(const Fixed &old)
@@ -21,6 +21,7 @@ Fixed::Fixed(const Fixed &old)
 
 int Fixed::getRawBits( void ) const
 {
+    std::cout << "getRawBits member function called" << "\n";
     return (fixed_point);
 }
 
