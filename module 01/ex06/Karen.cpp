@@ -14,7 +14,7 @@ void Karen::info( void )
 
 void Karen::warning( void )
 {
-    std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming here for years and you just started working here last month." << std::endl;
+    std::cout << "I think I deserve to have some extra bacon for free.\nI’ve been coming here for years and you just started working here last month." << std::endl;
 }
 
 void Karen::error( void )
@@ -34,7 +34,6 @@ void Karen::complain( std::string level)
 
     std::string cmd[4]={"DEBUG", "INFO", "WARNING", "ERROR"};
     int i = 0;
-
     while (i < 4)
     {
         while (cmd[i] == level)
@@ -44,5 +43,4 @@ void Karen::complain( std::string level)
         }
         i++;
     }
-
 }

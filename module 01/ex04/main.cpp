@@ -21,7 +21,7 @@ void error_handling(int ac, char *av[], std::fstream &file)
         std::cout  << "Error: file not found" << "\n";
         exit(1);
     }
-    int checkfile = file.peek() == std::fstream::traits_type::eof();
+    int checkfile = file.peek() == EOF;
     if (checkfile == 1)
     {
         std::cout << "Error: the file is empty" << "\n";
