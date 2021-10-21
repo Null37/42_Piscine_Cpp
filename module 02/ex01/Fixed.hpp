@@ -16,11 +16,8 @@ class Fixed
         int getRawBits( void ) const;
         void setRawBits( int const raw );
         void operator=(const Fixed& old_fix);
-        Fixed(const int cin
+        Fixed(const int newint);
         
-        
-        
-        )
 };
 
 
