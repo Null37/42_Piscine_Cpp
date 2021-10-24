@@ -8,4 +8,5 @@ int main()
     player1.takeDamage(100);
     player2.takeDamage(10);
     player2.beRepaired(500);
+    std::cout << "hp " << player2.get_hitpoint() << std::endl;
 }

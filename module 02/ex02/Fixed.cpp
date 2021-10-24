@@ -8,7 +8,8 @@ Fixed::Fixed( void )
     fixed_point = 0;
 }
 
-Fixed::~Fixed( void ){}
+Fixed::~Fixed( void ){
+}
 
 Fixed::Fixed(const Fixed &old)
 {
