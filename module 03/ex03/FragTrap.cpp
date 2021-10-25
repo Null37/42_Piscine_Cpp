@@ -39,3 +39,56 @@ void FragTrap::highFivesGuys( void )
 {
     std::cout << "Hight Five Guys" << std::endl;
 }
+
+std::string FragTrap::get_name( void )
+{
+    return (this->Name);
+}
+
+int FragTrap::get_hitpoint( void )
+{
+    return (this->Hitpoints);
+}
+
+int FragTrap::get_energy_point( void )
+{
+    return(this->Energy_points);
+}
+
+int FragTrap::get_Attack_damage( void )
+{
+   return (this->Attack_damage);
+}
+
+void FragTrap::set_name(std::string Name)
+{
+    this->Name = Name;
+}
+
+void FragTrap::set_hp(int hp)
+{
+    this->Hitpoints = hp;
+}
+
+void FragTrap::set_energy_point(int en_p)
+{
+    this->Energy_points = en_p;
+}
+
+void FragTrap::set_attack_damage(int  attak_damge)
+{
+    this->Attack_damage = attak_damge;  
+}
+
+int FragTrap::get_default_value_hitpoint(void)
+{
+    return 100;
+}
+int FragTrap::get_default_value_enrgy(void)
+{
+    return 100;
+}
+int FragTrap::get_default_value_attack_damage(void)
+{
+    return 30;
+}

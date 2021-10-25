@@ -45,3 +45,43 @@ void ScavTrap::guardGate()
 {
     std::cout << "ScavTrap " << this->Name  << " have enterredin Gate keeper mode" << std::endl;
 }
+
+std::string ScavTrap::get_name( void )
+{
+    return (this->Name);
+}
+
+int ScavTrap::get_hitpoint( void )
+{
+    return (this->Hitpoints);
+}
+
+int ScavTrap::get_energy_point( void )
+{
+    return(this->Energy_points);
+}
+
+int ScavTrap::get_Attack_damage( void )
+{
+   return (this->Attack_damage);
+}
+
+void ScavTrap::set_name(std::string Name)
+{
+    this->Name = Name;
+}
+
+void ScavTrap::set_hp(int hp)
+{
+    this->Hitpoints = hp;
+}
+
+void ScavTrap::set_energy_point(int en_p)
+{
+    this->Energy_points = en_p;
+}
+
+void ScavTrap::set_attack_damage(int  attak_damge)
+{
+    this->Attack_damage = attak_damge;  
+}

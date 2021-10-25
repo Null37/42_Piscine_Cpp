@@ -3,7 +3,7 @@
 
 #include "ScavTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
 public:
     FragTrap(std::string Name);
@@ -12,6 +12,17 @@ public:
     FragTrap(const FragTrap& oldj);
     void operator=(const FragTrap& oldj);
     void highFivesGuys( void );
+    std::string get_name( void );
+    int get_hitpoint( void );
+    int get_energy_point( void );
+    int get_Attack_damage( void );
+    void set_name(std::string Name);
+    void set_hp(int hp);
+    void set_energy_point(int en_p);
+    void set_attack_damage(int attak_damge);
+    int get_default_value_hitpoint(void);
+    int get_default_value_enrgy(void);
+    int get_default_value_attack_damage(void);
 };
 
 #endif

@@ -9,12 +9,11 @@ class DiamondTrap: public FragTrap,  public  ScavTrap
         std::string Name;
     public:
     DiamondTrap(std::string Name);
-    DiamondTrap( void ){};
+    DiamondTrap(const DiamondTrap& obj);
+    void operator=(const DiamondTrap& oldj);
+    DiamondTrap( void );
     ~DiamondTrap();
-    
 };
-
-
 
 
 #endif
