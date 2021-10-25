@@ -9,13 +9,13 @@ ScavTrap::ScavTrap( void )
 ScavTrap::ScavTrap(const ScavTrap& oldj)
 {
     *this = oldj;
-    std::cout << "Copy Construction called" << std::endl;
+    std::cout << "ScavTrap Copy Construction called" << std::endl;
    
 }
 
 void ScavTrap::operator=(const ScavTrap& oldj)
 {
-   std::cout <<  "assignment opertator called" << std::endl;
+   std::cout <<  "ScavTrap assignment opertator called" << std::endl;
     this->Name = oldj.Name;
     this->Hitpoints = oldj.Hitpoints;
     this->Attack_damage = oldj.Attack_damage;

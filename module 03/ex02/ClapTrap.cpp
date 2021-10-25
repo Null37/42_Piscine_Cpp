@@ -22,7 +22,7 @@ void ClapTrap::set_attack_damage(int attak_damage)
 
 ClapTrap::ClapTrap( void )
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "ClapTrap Default constructor called" << std::endl;
 }
 
 void ClapTrap::operator=(const ClapTrap& obj)
@@ -35,13 +35,13 @@ void ClapTrap::operator=(const ClapTrap& obj)
 
 ClapTrap::ClapTrap(const ClapTrap& oldj)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "ClapTrap Copy constructor called" << std::endl;
     *this = oldj;
 }
 
 ClapTrap::ClapTrap(std::string Name)
 {
-    std::cout << "-*-*- Constructor called -*-*-" << "\n";
+    std::cout << "-*-*- ClapTrap Constructor called -*-*-" << "\n";
     this->Name = Name;
     this->Hitpoints = 10;
     this->Attack_damage = 0;
@@ -50,7 +50,7 @@ ClapTrap::ClapTrap(std::string Name)
 
 ClapTrap::~ClapTrap( void )
 {
-    std::cout << "-*-*- distructor called -*-*-" << "\n";
+    std::cout << "-*-*- ClapTrap distructor called -*-*-" << "\n";
 }
 
 void ClapTrap::attack(std::string const &target)

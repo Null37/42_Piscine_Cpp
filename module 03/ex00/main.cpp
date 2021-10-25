@@ -9,4 +9,7 @@ int main()
     player2.takeDamage(10);
     player2.beRepaired(500);
     std::cout << "hp " << player2.get_hitpoint() << std::endl;
+
+    ClapTrap player3(player2);
+    std::cout << "hp " << player3.get_hitpoint() << std::endl;
 }

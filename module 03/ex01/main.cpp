@@ -18,5 +18,6 @@ int main()
         Scavplayer1.takeDamage(20);
         Scavplayer1.beRepaired(1000);
         Scavplayer1.guardGate();
+        std::cout << "hp " << Scavplayer1.get_hitpoint() << std::endl;
     }
 }

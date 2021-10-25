@@ -11,12 +11,12 @@ FragTrap::FragTrap(std::string Name) : ClapTrap(Name)
 
 FragTrap::FragTrap( void )
 {
-    std::cout << "Default construction called" << std::endl;
+    std::cout << "FragTrap Default construction called" << std::endl;
 }
 
  void FragTrap::operator=(const FragTrap& oldj)
  {
-    std::cout <<  "assignment opertator called" << std::endl;
+    std::cout <<  "FragTrap assignment opertator called" << std::endl;
     this->Name = oldj.Name;
     this->Hitpoints = oldj.Hitpoints;
     this->Attack_damage = oldj.Attack_damage;
@@ -25,7 +25,7 @@ FragTrap::FragTrap( void )
 
 FragTrap::FragTrap(const FragTrap& oldj)
 {
-    std::cout << "Copy Construction called" << std::endl;
+    std::cout << "FragTrap Copy Construction called" << std::endl;
     *this = oldj;
 }
 
@@ -37,7 +37,7 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys( void )
 {
-    std::cout << "Hight Five Guys" << std::endl;
+    std::cout << "High Five Guys" << std::endl;
 }
 
 std::string FragTrap::get_name( void )

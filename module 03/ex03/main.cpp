@@ -1,4 +1,5 @@
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
@@ -18,10 +19,18 @@ int main()
         Scavplayer1.takeDamage(20);
         Scavplayer1.beRepaired(1000);
         Scavplayer1.guardGate();
+        std::cout << "hp " << Scavplayer1.get_hitpoint() << std::endl;
     }
 
     {
         FragTrap fragplayer1("magic_frag");
         fragplayer1.highFivesGuys();
+    }
+    
+    {
+        DiamondTrap playerDi("diamond");
+        playerDi.whoAmI();
+        playerDi.highFivesGuys();
+        playerDi.attack("lola");
     }
 }
