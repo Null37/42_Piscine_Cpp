@@ -15,7 +15,7 @@ public:
     ~Animal();
         /*end* Constructor and Destructor */
 
-        
+
     /* getters */
     std::string getType( void );
         /* end  getters*/
