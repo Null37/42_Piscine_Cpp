@@ -5,7 +5,7 @@
 
 
 
-class Dog : public virtual Animal
+class Dog : public  Animal
 {
 private:
     /* data */
@@ -17,7 +17,7 @@ public:
         /*end* Constructor and Destructor */
 
     /* getters */
-        std::string getType( void );
+        std::string getType( void ) const;
         /* end  getters*/
 
     /* setters */
@@ -25,10 +25,10 @@ public:
     /* end setters */
 
         /*operators*/
-    void operator=(const Dog& obj);
+    Dog& operator=(const Dog& obj);
             /* end operators */
     
-    void makeSound(void);
+    void makeSound(void) const ;
 };
 
 

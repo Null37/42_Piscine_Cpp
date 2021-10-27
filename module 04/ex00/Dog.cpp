@@ -10,7 +10,7 @@ Dog::Dog( void )
 Dog::Dog(const Dog& obj)
 {
     std::cout << "DOG copy Constructor called" << std::endl;
-    *this = obj;
+   this->type = obj.type;
 }
 
 Dog::~Dog()
@@ -21,7 +21,7 @@ Dog::~Dog()
         /*end* Constructor and Destructor */
 
     /* getters */
-std::string Dog::getType( void )
+std::string Dog::getType( void ) const
 {
     return (this->type);
 }
@@ -35,14 +35,15 @@ void Dog::setType(std::string type)
     /* end setters */
 
          /*operators*/
-void Dog::operator=(const Dog& obj)
+Dog& Dog::operator=(const Dog& obj)
 {
     this->type = obj.type;
+    return (*this);
 }
     /* end operators */
 
-void Dog::makeSound(void)
+void Dog::makeSound(void) const
 {
     // \033[1;I'm Animal\033[0m\n
-    std::cout << "\033[1;32hah huh hah huh\033[0m" << std::endl;
+    std::cout << "\033[1;32m hah huh hah huh\033[0m" << std::endl;
 }

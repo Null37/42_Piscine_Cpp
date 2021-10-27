@@ -9,7 +9,8 @@ Animal::Animal( void )
 Animal::Animal(const Animal& obj)
 {
     std::cout << "Animal copy Constructor called" << std::endl;
-    *this = obj;
+
+   *this = obj;
 }
 
 Animal::~Animal()
@@ -19,7 +20,7 @@ Animal::~Animal()
     /*end* Constructor and Destructor */
 
     /* getters */
-std::string Animal::getType( void )
+std::string Animal::getType( void ) const
 {
     return (this->type);
 }
@@ -33,13 +34,15 @@ void Animal::setType(std::string type)
     /* end setters */
 
     /* end operators */
-void Animal::operator=(const Animal& obj)
+Animal& Animal::operator=(const Animal& obj)
 {
     this->type = obj.type;
+    return (*this);
 }
     /* end operators */
 
-void Animal::makeSound(void)
+void Animal::makeSound(void) const
 {
-    std::cout << "\033[1;31I'm Animal\033[0m\n" << std::endl;
+    //std::cout << "\033[1;31mbold red text\033[0m\n";
+    std::cout << "\033[1;31m I'm Animal\033[0m\n";
 }

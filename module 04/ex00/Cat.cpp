@@ -10,7 +10,7 @@ Cat::Cat( void )
 Cat::Cat(const Cat& obj)
 {
     std::cout << "CAT copy Constructor called" << std::endl;
-    *this = obj;
+    this->type = obj.type;
 }
 Cat::~Cat()
 {
@@ -19,7 +19,7 @@ Cat::~Cat()
             /*end* Constructor and Destructor */
     
         /* getters */
-std::string Cat::getType( void )
+std::string Cat::getType( void ) const
 {
     return (this->type);
 }
@@ -33,14 +33,15 @@ void Cat::setType(std::string type)
     /* end setters */
 
     /*operators*/
-void Cat::operator=(const Cat& obj)
+Cat& Cat::operator=(const Cat& obj)
 {
     this->type = obj.type;
+    return (*this);
 }
 
     /* end operators */
 
-void Cat::makeSound(void)
+void Cat::makeSound(void) const 
 {
-    std::cout << "\033[1;33meow meow meow\033[0m" << std::endl;
+    std::cout << "\033[1;33m meow meow meow\033[0m" << std::endl;
 }

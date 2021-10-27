@@ -4,7 +4,7 @@
 #include "Animal.hpp"
 
 
-class Cat : public virtual Animal
+class Cat : public  Animal
 {
 private:
     /* data */
@@ -16,17 +16,17 @@ public:
             /*end* Constructor and Destructor */
 
     /* getters */
-        std::string getType( void );
+        std::string getType( void ) const;
         /* end  getters*/
 
 /* setters */
     void setType(std::string type);
     /* end setters */
         /*operators*/
-    void operator=(const Cat& obj);
+    Cat& operator=(const Cat& obj);
              /* end operators */
     
-    void makeSound(void);
+    void makeSound(void) const;
 };
 
 

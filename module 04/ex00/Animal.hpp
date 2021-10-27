@@ -17,7 +17,7 @@ public:
 
 
     /* getters */
-    std::string getType( void );
+    std::string getType( void ) const;
         /* end  getters*/
 
     /* setters */
@@ -25,10 +25,10 @@ public:
     /* end setters */
 
         /*operators*/
-    void operator=(const Animal& obj);
+   Animal& operator=(const Animal& obj);
             /* end operators */
 
-    void makeSound(void);
+    virtual void makeSound(void) const ;
 };
 
 

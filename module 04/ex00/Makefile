@@ -1,14 +1,14 @@
-NAME = 
+NAME = Animal
 
-SRC = main.cpp Animal
-FLAGS = -Wall -Wextra -Werror
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp
+# FLAGS = -Wall -Wextra -Werror
 
-CP = clang++
+CP = clang++ -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(CP) $(FLAGS) $(SRC) -o $(NAME)
+	$(CP) $(SRC) -o $(NAME)
 
 clean:
 	@echo "no *.o"
