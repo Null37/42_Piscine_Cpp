@@ -1,6 +1,6 @@
-NAME = Animal
+NAME = Brain
 
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp
+SRC = main.cpp 
 # FLAGS = -Wall -Wextra -Werror
 
 CP = clang++ -std=c++98

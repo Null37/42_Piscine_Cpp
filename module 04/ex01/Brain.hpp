@@ -1,20 +1,19 @@
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-#include "Animal.hpp"
+#include <iostream>
 
-
-
-class Dog : public  Animal
+class Brain
 {
 private:
-    /* data */
+    std::string ideas[100];
 public:
         /* Constructors and destructors */
-    Dog( void );
-    Dog(const Dog& obj);
-    ~Dog();
+    Brain( void );
+    Brain(const Brain& obj);
+    ~Brain();
         /*end* Constructor and Destructor */
+
 
     /* getters */
     std::string getType( void ) const;
@@ -25,10 +24,7 @@ public:
     /* end setters */
 
         /*operators*/
-    Dog& operator=(const Dog& obj);
-            /* end operators */
-    
-    void makeSound(void) const ;
+   Brain& operator=(const Brain& obj);
 };
 
 
