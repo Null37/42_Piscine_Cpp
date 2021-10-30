@@ -16,15 +16,15 @@ public:
 
 
     /* getters */
-    std::string getType( void ) const;
+    std::string getTypeID( int index ) const;
         /* end  getters*/
 
     /* setters */
-    void setType(std::string type);
+    void setType(std::string type, int i);
     /* end setters */
 
         /*operators*/
-   Brain& operator=(const Brain& obj);
+   void operator=(const Brain& obj);
 };
 
 

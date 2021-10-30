@@ -12,7 +12,7 @@ public:
         /* Constructors and destructors */
     Animal( void );
     Animal(const Animal& obj);
-    ~Animal();
+    virtual ~Animal();
         /*end* Constructor and Destructor */
 
 
@@ -29,6 +29,7 @@ public:
             /* end operators */
 
     virtual void makeSound(void) const ;
+    
 };
 
 

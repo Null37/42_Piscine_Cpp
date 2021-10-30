@@ -5,18 +5,20 @@ Dog::Dog( void )
 {
     std::cout << "DOG Default Constructor called" << std::endl;
     this->type = "Dog";
+    this->_brain = new Brain();
 }
 
 Dog::Dog(const Dog& obj)
 {
     std::cout << "DOG copy Constructor called" << std::endl;
-   this->type = obj.type;
+    this->type = obj.type;
+    this->_brain = new Brain();
 }
 
 Dog::~Dog()
 {
     std::cout << "DOG Default Destructor called" << std::endl;
-
+    delete this->_brain;
 }
         /*end* Constructor and Destructor */
 
@@ -24,6 +26,11 @@ Dog::~Dog()
 std::string Dog::getType( void ) const
 {
     return (this->type);
+}
+
+std::string Dog::getIDia(int i) const
+{
+    return (_brain->getTypeID(i));
 }
     /* end  getters*/
 
@@ -37,7 +44,11 @@ void Dog::setType(std::string type)
          /*operators*/
 Dog& Dog::operator=(const Dog& obj)
 {
+    std::cout << "hnaaaaaaaaa" << std::endl;
     this->type = obj.type;
+    this->_brain = new Brain();
+    for (int i(0); i < 100; i++)
+        this->_brain->setType(obj.getIDia(i), i);
     return (*this);
 }
     /* end operators */

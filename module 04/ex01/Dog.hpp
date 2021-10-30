@@ -2,13 +2,13 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
-
+#include "Brain.hpp"
 
 
 class Dog : public  Animal
 {
 private:
-    /* data */
+    Brain* _brain;
 public:
         /* Constructors and destructors */
     Dog( void );
@@ -18,6 +18,7 @@ public:
 
     /* getters */
     std::string getType( void ) const;
+    std::string getIDia(int i) const;
         /* end  getters*/
 
     /* setters */
