@@ -12,7 +12,7 @@ Cat::Cat(const Cat& obj)
 {
     std::cout << "CAT copy Constructor called" << std::endl;
     this->_brain = new Brain();
-     (*this) = obj;
+    *this = obj;
 }
 
 Cat::~Cat()
@@ -44,9 +44,9 @@ void Cat::setType(std::string type)
     /*operators*/
 Cat& Cat::operator=(const Cat& obj)
 {
-    this->type = obj.type;
+   this->type = obj.type;
     *this->_brain = *obj._brain;
-    return (*this);
+     return (*this);
 }
 
     /* end operators */

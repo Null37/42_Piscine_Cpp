@@ -1,30 +1,29 @@
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
 
-class Cat : public  Animal
+
+class WrongCat : public  WrongAnimal
 {
 private:
-    Brain* _brain;
+    /* data */
 public:
             /* Constructors and destructors */
-    Cat( void );
-    Cat(const Cat& obj);
-    ~Cat();
+    WrongCat( void );
+    WrongCat(const WrongCat& obj);
+    ~WrongCat();
             /*end* Constructor and Destructor */
 
     /* getters */
         std::string getType( void ) const;
-        std::string getIDia(int i) const;
         /* end  getters*/
 
 /* setters */
     void setType(std::string type);
     /* end setters */
         /*operators*/
-    Cat& operator=(const Cat& obj);
+    WrongCat& operator=(const WrongCat& obj);
              /* end operators */
     
     void makeSound(void) const;

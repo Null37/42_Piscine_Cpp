@@ -1,9 +1,11 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "Brain.hpp"
+
 
 int main()
 {
+  
+    Animal  test;
     //           test 1 
     {
         std::cout << "\033[1;32m ---------- test 1-------\033[0m" << std::endl;
@@ -43,4 +45,6 @@ int main()
         std::cout << "\033[1;32m-----------D-------\033[0m" << std::endl;
         delete i;
     }
+
+    
 }
