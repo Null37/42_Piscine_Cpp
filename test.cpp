@@ -1,15 +1,24 @@
+// using standard exceptions
 #include <iostream>
-#include <fstream>
+#include <exception>
+using namespace std;
 
-int  main()
+class myexception: public exception
 {
-    std::string delimiter = "d";
-    std::string a = "abcdo";
-    int pos = a.find(delimiter);
-    std::string token;
-    token = a.substr(0, pos); 
-    std::cout << token << std::endl;
-     std::cout << a.find(delimiter);
-     a.erase(0, pos + delimiter.length());
-    std::cout << a;
+  virtual const char* what() const throw()
+  {
+    return "My exception happened";
+  }
+} myex;
+
+int main () {
+//   try
+//   {
+    throw myex;
+//   }
+//   catch (exception& e)
+//   {
+//     cout << e.what() << '\n';
+//   }
+  return 0;
 }
