@@ -11,10 +11,11 @@ public:
 
     RobotomyRequestForm( void );
     RobotomyRequestForm( std::string target );
-    RobotomyRequestForm( const RRF& target );
+    RobotomyRequestForm( const RRF&);
     ~RobotomyRequestForm();
+    // END C-D
 };
-// END g-s
+
 
 #endif
 

@@ -9,11 +9,12 @@ class ShrubberyCreationForm
 private:
     /* data */
 public:
-/*
-    getters and setters*/
+    /*  constructor and Destructor ---*/
+
     ShrubberyCreationForm( void );
     ShrubberyCreationForm( std::string target);
     ~ShrubberyCreationForm();
+    //    END C-D
 };
 
 

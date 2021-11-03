@@ -1,6 +1,7 @@
 #include "ShrubberyCreationForm.hpp"
 
 
+ /*  constructor and Destructor ---*/
 ShrubberyCreationForm::ShrubberyCreationForm( void )
 {
 
@@ -15,5 +16,6 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 
 }
+    //    END C-D
 
 

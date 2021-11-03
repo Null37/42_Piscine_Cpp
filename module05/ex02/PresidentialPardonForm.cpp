@@ -3,7 +3,7 @@
 /*
         getter and setters
     */
-PPF::PresidentialPardonForm(void)
+PPF::PresidentialPardonForm(void) : Form("", 25, 5, "")
 {
     std::cout << "PresidentialPardonForm default constructor  is called" << std::endl;
 }
