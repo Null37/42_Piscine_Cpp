@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat( void )
 {
@@ -80,4 +80,20 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
 {
     os << "<" << obj.getName()  << ">" << ", bureaucrat grade " << "<" << obj.getGrade() << ">" << std::endl;
     return os;
+}
+
+void Bureaucrat::signForm(Form &_form) const 
+{
+    if (_form.gettsigned() ==  true)
+    {
+        std::cout <<  "<" << this->Name << ">" << " signs "
+                  << "<" << _form.gettName() <<  ">" <<std::endl;
+    }
+    else
+      {
+          std::cout <<  "<" << this->Name << ">" << " connot signs "
+                  << "<" << _form.gettName() << ">"
+                  << " because ";
+        std::cout << "<" << "Grade tooo LOW"<< ">" << std::endl;
+      }
 }

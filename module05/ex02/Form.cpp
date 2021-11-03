@@ -12,7 +12,7 @@ Form::Form(void):Name("none_burea"), _signgrade(150), _exutegrade(150)
         throw GradeTooLowException();
 }
 
-Form::Form(std::string _name, int _sigrade, int  _exgrade):
+Form::Form(std::string _name, int _sigrade, int  _exgrade, std::string target):
     Name(_name), _signgrade(_sigrade), _exutegrade(_exgrade)
 {
     std::cout << "FROM constructor  called" << std::endl;
@@ -21,6 +21,7 @@ Form::Form(std::string _name, int _sigrade, int  _exgrade):
     else if (this->_signgrade > 150 || this->_exutegrade > 150)
         throw GradeTooLowException();
     this->_signed = false;
+    this->target = target;
 
 }
 
@@ -38,6 +39,11 @@ Form::~Form()
 /* end C-D*/
 
 /* getters and setters */
+
+std::string Form::gettTarget(void) const
+{
+    return (this->target);
+}
 
 std::string Form::gettName( void ) const
 {

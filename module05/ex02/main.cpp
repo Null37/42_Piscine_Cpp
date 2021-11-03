@@ -5,10 +5,10 @@ int main( void )
 {
     try
     {
-        Bureaucrat _bu("battata", 1);
+        Bureaucrat _bu("battata", 25);
         Form  _f("hhh", 15, 15);
         _f.beSigned(_bu);
-        std::cout << _f;
+        // _bu.signForm(_f);
     }
     catch (std::exception & e)
     {

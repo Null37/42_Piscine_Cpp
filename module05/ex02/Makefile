@@ -1,6 +1,7 @@
-NAME = Form
+NAME = Start_work
 
-SRC = main.cpp Bureaucrat.cpp  Form.cpp
+SRC = main.cpp Bureaucrat.cpp  Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp\
+ PresidentialPardonForm.cpp
 FLAGS =  -Wall -Wextra -Werror
 
 CP = clang++ -std=c++98
