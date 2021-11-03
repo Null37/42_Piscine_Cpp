@@ -6,10 +6,7 @@
 
 class PresidentialPardonForm: public Form
 {
-private:
-    /* data */
 public:
-
     /*
         getter and setters
     */
@@ -18,6 +15,9 @@ public:
     PresidentialPardonForm(const PPF &_ppf);
     ~PresidentialPardonForm();
     //    EDN G-S
+
+    // operators
+    void operator=(const PPF&);
 };
 
 
