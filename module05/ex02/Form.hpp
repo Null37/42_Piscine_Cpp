@@ -43,7 +43,7 @@ public:
     {
         const char* what() const throw();
     };
-    void execute(Bureaucrat const & executor) const;
+    virtual  void execute(Bureaucrat const & executor) const = 0;
     
 };
 
