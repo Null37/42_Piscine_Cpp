@@ -1,14 +1,24 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main( void )
 {
     try
     {
-        Bureaucrat _bu("battata", 25);
-        Form  _f("hhh", 15, 15);
-        _f.beSigned(_bu);
-        // _bu.signForm(_f);
+        Bureaucrat _bu("battata", 137);
+        SCF type_scf("sher");
+        type_scf.beSigned(_bu);
+        type_scf.execute(_bu);
+        _bu.executeForm(type_scf);
+        // PPF type_ppf("sher");
+        // type_ppf.beSigned(_bu);
+        // type_ppf.execute(_bu);
+        // RRF type_ppf("sher");
+        // type_rrf.beSigned(_bu);
+        // type_rff.execute(_bu);
     }
     catch (std::exception & e)
     {

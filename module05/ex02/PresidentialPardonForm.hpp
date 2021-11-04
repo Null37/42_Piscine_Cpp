@@ -15,7 +15,7 @@ public:
     PresidentialPardonForm(const PPF &_ppf);
     ~PresidentialPardonForm();
     //    EDN G-S
-
+    void execute(Bureaucrat const & executor) const;
     // operators
     void operator=(const PPF&);
 };

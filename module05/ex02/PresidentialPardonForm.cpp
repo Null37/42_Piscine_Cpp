@@ -29,3 +29,17 @@ void PPF::operator=(const PPF&)
 {
     
 }
+
+
+void PPF::execute(Bureaucrat const & executor) const
+{
+    if (this->gettsigned() == true)
+    {
+        if (executor.getGrade() <= this->getExutegrade())
+            std::cout << "<" << this->gettTarget() << ">" << " as been pardoned by Zafod Beeblebrox" << std::endl;
+        else
+            throw Form::GradeTooLowException();
+    }
+    else
+        throw Form::GradeTooLowException();
+}

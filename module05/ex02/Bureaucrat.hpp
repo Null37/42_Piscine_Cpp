@@ -33,9 +33,10 @@ public:
             const char* what() const throw();
         };
         //*----------*
-     void incrementGrade(void);
-     void decrementGrade(void);
-    void signForm(Form &_form) const;
+    void incrementGrade(void);
+    void decrementGrade(void);
+    void signForm(const Form &_form) const;
+    void executeForm(Form const & form);
     void operator=(const Bureaucrat& old);
     /*End G and S*/
 };

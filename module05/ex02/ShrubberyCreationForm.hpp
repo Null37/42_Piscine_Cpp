@@ -4,16 +4,16 @@
 #include "Form.hpp"
 #define ShrubberyCreationForm SCF
 
-class ShrubberyCreationForm
+class ShrubberyCreationForm :  public Form
 {
-private:
-    /* data */
 public:
     /*  constructor and Destructor ---*/
 
     ShrubberyCreationForm( void );
     ShrubberyCreationForm( std::string target);
+    ShrubberyCreationForm( const SCF& target);
     ~ShrubberyCreationForm();
+    void execute(Bureaucrat const & executor) const;
     //    END C-D
 };
 
