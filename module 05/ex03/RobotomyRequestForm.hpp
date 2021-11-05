@@ -13,8 +13,9 @@ public:
     RobotomyRequestForm( std::string target );
     RobotomyRequestForm( const RRF&);
     ~RobotomyRequestForm();
-    void execute(Bureaucrat const & executor) const;
     // END C-D
+    void execute(Bureaucrat const & executor) const;
+    static Form* create(const std::string target);
 };
 
 

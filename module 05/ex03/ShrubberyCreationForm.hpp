@@ -14,6 +14,7 @@ public:
     ShrubberyCreationForm( const SCF& target);
     ~ShrubberyCreationForm();
     void execute(Bureaucrat const & executor) const;
+    static Form* create(const std::string target);
     //    END C-D
 };
 

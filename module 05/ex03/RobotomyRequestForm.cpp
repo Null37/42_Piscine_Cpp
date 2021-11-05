@@ -44,3 +44,8 @@ void RRF::execute(Bureaucrat const & executor) const
     else
         throw Form::GradeTooLowException();
 }
+
+Form* RRF::create(const std::string target)
+{
+    return (new RRF(target));
+}

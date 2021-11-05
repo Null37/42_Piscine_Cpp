@@ -18,8 +18,6 @@ public:
     void execute(Bureaucrat const & executor) const;
     // operators
     void operator=(const PPF&);
+    static Form* create(const std::string target);
 };
-
-
-
 #endif

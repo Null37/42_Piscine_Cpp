@@ -30,6 +30,10 @@ void PPF::operator=(const PPF&)
     
 }
 
+Form* PPF::create(const std::string target)
+{
+    return (new PPF(target));
+}
 
 void PPF::execute(Bureaucrat const & executor) const
 {

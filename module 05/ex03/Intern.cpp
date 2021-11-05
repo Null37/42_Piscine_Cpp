@@ -22,13 +22,17 @@ const char* Intern::Not_here::what() const throw()
 Form *Intern::makeForm(std::string form_name, std::string target)
 {
     std::string forms[3]= {"robotomy request", "Shrubbery request", "Presidenti request"};
-    Form *table[3] =  { new RRF(target), new PPF(target), new SCF(target)};
+    Form* (*table[3])(const std::string target);
+
+    table[0] = PPF::create;
+    table[1] = RRF::create;
+    table[2] = SCF::create;
     for (int  i = 0; i < 3; i++)
     {
         if (form_name == forms[i])
         {
-            std::cout << "Intern creates" << " <" <<  table[i]->gettName() << ">" << std::endl;
-            return table[i];
+            std::cout << "Intern creates" << " <" <<  form_name << ">" << std::endl;
+            return table[i](target);
         }
     }
     throw Not_here();

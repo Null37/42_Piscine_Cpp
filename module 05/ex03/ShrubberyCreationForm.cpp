@@ -57,3 +57,7 @@ void SCF::execute(Bureaucrat const & executor) const
         throw Form::GradeTooLowException();
 }
 
+Form* SCF::create(const std::string target)
+{
+    return (new SCF(target));
+}
