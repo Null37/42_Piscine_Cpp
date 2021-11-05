@@ -4,14 +4,19 @@
 #include "PresidentialPardonForm.hpp"
 
 
-Intern::Intern(/* args */)
+Intern::Intern(void)
 {
-
+    std::cout << "Intern constructor default called" << std::endl;
 }
 
 Intern::~Intern()
 {
+    std::cout << "Intern destructor called" << std::endl;
+}
 
+const char* Intern::Not_here::what() const throw()
+{
+    return "that file not in desk boos :(";
 }
 
 Form *Intern::makeForm(std::string form_name, std::string target)
@@ -26,5 +31,5 @@ Form *Intern::makeForm(std::string form_name, std::string target)
             return table[i];
         }
     }
-    return œåœ;
+    throw Not_here();
 }
