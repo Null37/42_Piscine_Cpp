@@ -30,7 +30,19 @@ convert::operator double() const
     return std::stod(this->str);
 }
 
+bool is_number(std::string &str)
+{
+    for (size_t i = 0; str[i]; i++)
+    {
+        if (isdigit(str[i]))
+            i++;
+        else
+            return false;
+    }
+    return (true);  
+}
+
 const char *convert::NOT_printable::what() const throw()
 {
-    
+   return "Non displayable";
 }

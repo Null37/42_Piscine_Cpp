@@ -15,7 +15,7 @@ int main(int ac, char* av[])
     convert conv(str);
     try
     {
-        /* code */
+        std::cout << static_cast<char>(conv) << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -43,7 +43,7 @@ int main(int ac, char* av[])
     try
     {
         std::cout.precision(1);
-        std::cout << "double: " << std::fixed << static_cast<float>(conv) <<  std::endl;
+        std::cout << "double: " << std::fixed << static_cast<double>(conv) <<  std::endl;
     }
     catch(std::exception& e)
     {
