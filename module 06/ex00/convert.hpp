@@ -10,6 +10,10 @@ private:
 public:
     convert(std::string &str);
     ~convert();
+    class NOT_printable: public std::exception
+    {
+        const char *what() const throw();
+    };
     operator char() const;
     operator int() const;
     operator float() const;

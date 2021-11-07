@@ -15,6 +15,23 @@ int main(int ac, char* av[])
     convert conv(str);
     try
     {
+        /* code */
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        std::cout << "int: " << static_cast<int>(conv) << std::endl;
+    }
+    catch(std::exception &e)
+    {
+        (void)e;
+        std::cout << "impossible" << std::endl;
+    }
+    try
+    {
         std::cout.precision(1);
         std::cout << "float: " << std::fixed << static_cast<float>(conv) <<  'f' << std::endl;
     }
@@ -25,9 +42,10 @@ int main(int ac, char* av[])
     }
     try
     {
-        std::cout << "int: " << static_cast<int>(conv) << std::endl;
+        std::cout.precision(1);
+        std::cout << "double: " << std::fixed << static_cast<float>(conv) <<  std::endl;
     }
-    catch(std::exception &e)
+    catch(std::exception& e)
     {
         (void)e;
         std::cout << "impossible" << std::endl;

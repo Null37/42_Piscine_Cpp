@@ -29,3 +29,8 @@ convert::operator double() const
 {
     return std::stod(this->str);
 }
+
+const char *convert::NOT_printable::what() const throw()
+{
+    
+}
