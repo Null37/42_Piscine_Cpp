@@ -1,6 +1,6 @@
 NAME = convert
 
-SRC = main.cpp 
+SRC = main.cpp convert.cpp 
 FLAGS =  -Wall -Wextra -Werror
 
 CP = clang++ -std=c++98

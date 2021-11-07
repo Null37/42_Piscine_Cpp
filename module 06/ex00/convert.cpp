@@ -27,5 +27,5 @@ convert::operator float() const
 
 convert::operator double() const
 {
-    return 0;
+    return std::stod(this->str);
 }

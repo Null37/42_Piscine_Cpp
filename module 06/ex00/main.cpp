@@ -16,7 +16,7 @@ int main(int ac, char* av[])
     try
     {
         std::cout.precision(1);
-        std::cout << "float: " << std::fixed << static_cast<float>(conv) << std::endl;
+        std::cout << "float: " << std::fixed << static_cast<float>(conv) <<  'f' << std::endl;
     }
     catch(std::exception& e)
     {
