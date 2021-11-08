@@ -9,25 +9,22 @@ typedef struct data
 
 uintptr_t serialize(Data* ptr)
 {
-    uintptr_t keda = reinterpret_cast<uintptr_t>(ptr);
-    std::cout << ptr << std::endl;
-    return ();
+    // uintptr_t keda = reinterpret_cast<uintptr_t>(ptr);
+    return (reinterpret_cast<uintptr_t>(ptr));
+}
+
+Data* deserialize(uintptr_t raw)
+{
+    return (reinterpret_cast<Data*>(raw));
 }
 
 int main()
 {
-    // Data *ptr = new Data;
-    // ptr->a = 10;
-    // uintptr_t t =  serialize(ptr);
-    //int *aa = (int*)(ptr);
-   // std::cout << *ptr << std::endl;
-    // unsigned long a = 2147483648;
-    // int t = (int)a;
-    // std::cout << t << std::endl;
-    Data* ptr = new Data;
-    uintptr_t keda = (uintptr_t)(ptr);
-    std::cout << ptr << std::endl;
-    std::cout << keda << std::endl;
+    Data *ptr = new data;
 
-
+    uintptr_t  t_p = serialize(ptr);
+    std::cout << "addrese ptr = " << ptr << std::endl;
+    std::cout << "addrese after cast = " << t_p << std::endl;
+    Data *p2 = deserialize(t_p);
+    std::cout << "addrese p2 = " << p2 << std::endl;
 }
