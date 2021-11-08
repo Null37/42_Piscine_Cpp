@@ -1,8 +1,8 @@
-#ifdef B
-#define B
+#ifndef B_HPP
+#define B_HPP
 
 
-class B
+class B : public Base
 {
 private:
     /* data */

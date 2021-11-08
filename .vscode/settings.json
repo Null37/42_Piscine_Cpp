@@ -69,5 +69,6 @@
         "filesystem": "cpp",
         "numeric": "cpp",
         "random": "cpp"
-    }
+    },
+    "C_Cpp.dimInactiveRegions": false
 }

@@ -1,8 +1,8 @@
-#ifndef C
-#define C
+#ifndef C_HPP
+#define C_HPP
 
 
-class C
+class C: public Base
 {
 private:
     /* data */
@@ -18,8 +18,6 @@ C::C(/* args */)
 C::~C()
 {
 }
-
-
 
 
 #endif
