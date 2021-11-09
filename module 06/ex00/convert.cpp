@@ -23,32 +23,37 @@ convert::~convert()
 
 convert::operator char() const
 {
-    if(std::isprint(ret) && !(this->error_char))
+    if(std::isprint(ret) && this->error_char == 0)
         return ret;
-    if (this->error_char && str.length() != 1)
+    if (this->error_char == 1 && str.length() != 1)
         throw convert::Impossible();
     if (str.length() == 1)
-        return (this->str[0]);
+    {
+        if (this->error_char == 1)
+            return (this->str[0]);
+        else if (isprint(this->ret))
+            return (this->str[0]);
+    }
     throw convert::NOT_printable();
 }
 
 convert::operator int() const
 {
-    if (this->str.length() == 1)
+    if (this->str.length() == 1 && this->error_char == 1)
         return this->str[0];
     return std::stoi(this->str);
 }
 
 convert::operator float() const
 {
-    if (this->str.length() == 1)
+    if (this->str.length() == 1 && this->error_char == 1)
         return this->str[0];
     return std::stof(this->str);
 }
 
 convert::operator double() const
 {
-    if (this->str.length() == 1)
+    if (this->str.length() == 1 && this->error_char == 1)
         return this->str[0];
     return std::stod(this->str);
 }

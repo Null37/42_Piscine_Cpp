@@ -8,14 +8,16 @@ int main(int ac, char* av[])
     // std::cout << av[1] << std::endl;
     if (ac != 2)
     {
-        std::cout << "ERROR: in arguments -add 1 argmunt-" << std::endl;
+        std::cout << "ERROR: in arguments \\-add 1 argmunt-/" << std::endl;
         return 1;
     }
     std::string str = av[1];
     convert conv(str);
     try
     {
-        std::cout << "char: " << "'" << static_cast<char>(conv)  << "'" << std::endl;
+        std::cout << "char: " ;
+        char c  =  static_cast<char>(conv);
+        std::cout << "'" << c << "'" << std::endl;
     }
     catch(const std::exception& e)
     {
