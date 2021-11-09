@@ -26,19 +26,54 @@ Base * generate(void)
             break;
     }
     return (ptrA);
-}
+} 
 
 void identify(Base* p)
 {
-
+    if (dynamic_cast<A*>(p))
+        std::cout << "A" << std::endl;
+    if (dynamic_cast<C*>(p))
+        std::cout << "C" << std::endl;
+    if (dynamic_cast<B*>(p))
+        std::cout << "B" << std::endl;
 }
 void identify(Base& p)
 {
-    
+    try
+    {
+        p = dynamic_cast<A&>(p);
+        std::cout << "A" << std::endl;
+    }
+    catch(const std::bad_cast & e)
+    {
+        static_cast<void>(e);
+    }
+    try
+    {
+        p = dynamic_cast<B&>(p);
+        std::cout << "B" << std::endl;
+    }
+    catch(const std::bad_cast& e)
+    {
+        static_cast<void>(e);
+    }
+    try
+    {
+        p = dynamic_cast<C&>(p);
+        std::cout << "C" << std::endl;
+    }
+    catch(const std::bad_cast & e)
+    {
+        static_cast<void>(e);
+    }
 }
 
 int main(void)
 {
-
+    Base *test = generate();
+    Base &test2 = *test;
+    identify(test);
+    identify(test2);
+    delete test;
     return 0;
 }

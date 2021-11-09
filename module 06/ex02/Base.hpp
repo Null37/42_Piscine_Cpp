@@ -12,14 +12,6 @@ public:
     virtual ~Base();
 };
 
-Base::Base(/* args */)
-{
-}
-
-Base::~Base()
-{
-}
-
 
 
 #endif
