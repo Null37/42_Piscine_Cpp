@@ -52,7 +52,7 @@ Array<T>::~Array()
 }
 
 template<typename T>
-Array<T>::Array(const Array& old)
+Array<T>::Array(const Array& old): ptr_a(NULL)
 {
     std::cout << "constructor copy called" << std::endl;
     *this =  old;
@@ -61,8 +61,15 @@ Array<T>::Array(const Array& old)
 template<typename T>
 Array<T>& Array<T>::operator= (const Array& old)
 {
+    if(ptr_a)
+        delete[] ptr_a;
     this->_size = old._size;
     this->ptr_a = new T[_size];
+    for (size_t i = 0; i < old._size; i++)
+    {
+        this->ptr_a[i] = old.ptr_a[i];
+    }
+    
     return (*this);
 }
 
@@ -75,7 +82,7 @@ const char * Array<T>::OUT_OF_RANGE::what() const throw()
 template<typename T>
 T& Array<T>::operator[] (size_t index)
 {
-    if (index > this->_size)
+    if (index >= this->_size || index < 0)
         throw OUT_OF_RANGE();
     return (this->ptr_a[index]);
 }
