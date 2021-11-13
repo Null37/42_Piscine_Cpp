@@ -13,7 +13,7 @@ class NOT_FOUND: public std::exception
 };
 
 template<typename T>
-void easyfind(T container, int find)
+void easyfind( T  &container, int find)
 {
     typename T::iterator it;
     it = std::find(container.begin(), container.end(), find);
