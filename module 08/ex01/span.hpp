@@ -12,14 +12,19 @@ private:
 public:
     span();
     span(unsigned int  N);
-    void addNumbe(int tobAdd);
     span(const span& old);
     ~span();
+
+
     int get_N();
     std::vector<int> get_v() const;
+
+
     void set_N(int);
     void set_V(int index, int number);
     span& operator=(const span&);
+    
+    void addNumbe(int tobAdd);
     class OUT_OF_RANGE: public std::exception
     {
         const char *what() const throw();
