@@ -3,7 +3,7 @@
 
 
 template<typename S>
-void iter(S* first, int  size, void (*fp)(S))
+void iter(S* first, int  size, void (*fp)(const S &))
 {
     for (int i = 0; i < size; i++)
     {

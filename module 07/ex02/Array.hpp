@@ -69,7 +69,6 @@ Array<T>& Array<T>::operator= (const Array& old)
     {
         this->ptr_a[i] = old.ptr_a[i];
     }
-    
     return (*this);
 }
 
