@@ -1,10 +1,10 @@
-#include "mutantstack.hpp"
+// #include "mutantstack.hpp"
 
-mutantstack::mutantstack(/* args */)
-{
-}
+// mutantstack::mutantstack(/* args */)
+// {
+// }
 
-mutantstack::~mutantstack()
-{
-}
+// mutantstack::~mutantstack()
+// {
+// }
 
