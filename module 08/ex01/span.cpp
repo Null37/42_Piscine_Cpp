@@ -69,7 +69,16 @@ int span::get_N()
     return N;
 }
 
-std::vector<int> span::get_v()
+std::vector<int> span::get_v() const
 {
     return (this->con_V);
+}
+
+void span::set_N(int n)
+{
+    N = n;
+}
+void span::set_V(int index, int number)
+{
+    con_V[index] = number;
 }

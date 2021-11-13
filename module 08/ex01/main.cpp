@@ -14,8 +14,9 @@ int main()
         // v.addNumbe(1000);
         span v2 = v; 
         std::cout << v2.get_v()[0] << std::endl;
-    //    std::cout <<  v.shortestSpan() << std::endl;
-    //    std::cout <<  v.longestSpan() << std::endl;
+        
+       std::cout <<  v.shortestSpan() << std::endl;
+       std::cout <<  v.longestSpan() << std::endl;
 
     }
     catch(const std::exception& e)
