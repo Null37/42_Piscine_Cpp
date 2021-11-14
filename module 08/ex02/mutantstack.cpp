@@ -1,10 +1,13 @@
-// #include "mutantstack.hpp"
+#include "mutantstack.hpp"
 
-// mutantstack::mutantstack(/* args */)
-// {
-// }
+template <typename T>
+MutantStack<T>::MutantStack(const MutantStack& old): std::stack<T>(old)
+{
+}
 
-// mutantstack::~mutantstack()
-// {
-// }
-
+template <typename T>
+MutantStack<T>& MutantStack<T>::operator=(const MutantStack& old)
+{
+    this->c = old->c;
+    return *this;
+}

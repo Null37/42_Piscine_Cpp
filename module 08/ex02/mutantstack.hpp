@@ -3,22 +3,21 @@
 
 #include <iostream>
 #include <stack>
-#include <vector>
 #include <list>
+#include <vector>
 
 template <typename T>
 class MutantStack : public std::stack<T>
 {
 private:
 public:
-    MutantStack() {};
-    ~MutantStack() {};
-
-    //typedef typename std::vector<T>::iterator    iterator;
+    MutantStack(void){};
+    MutantStack(const MutantStack&);
+    ~MutantStack(){};
     typedef typename std::stack<T>::container_type::iterator    iterator;
-
-    iterator    begin() {return this->c.beghin()}
-    iterator    end() {return this->c.end();}
+    MutantStack& operator=(const MutantStack&);
+    iterator    begin(){return this->c.begin();};
+    iterator    end(){return this->c.end();};
 };
 
 
