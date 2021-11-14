@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
+
 
 class span
 {
@@ -17,14 +19,15 @@ public:
 
 
     int get_N();
-    std::vector<int> get_v() const;
+    std::vector<int>& get_v();
 
 
     void set_N(int);
     void set_V(int index, int number);
     span& operator=(const span&);
     
-    void addNumbe(int tobAdd);
+    void addNumber(int tobAdd);
+    void addNumber(std::vector<int>::iterator, std::vector<int>::iterator);
     class OUT_OF_RANGE: public std::exception
     {
         const char *what() const throw();

@@ -14,12 +14,11 @@ public:
     MutantStack() {};
     ~MutantStack() {};
 
-    typedef typename std::vector<T>::iterator    iterator;
-    //typedef typename std::stack<T>::container_type::iterator    iterator;
+    //typedef typename std::vector<T>::iterator    iterator;
+    typedef typename std::stack<T>::container_type::iterator    iterator;
 
-    iterator    begin() {return this->c.begin(); }
-    iterator    end() {return this->c.end(); }
-
+    iterator    begin() {return this->c.beghin()}
+    iterator    end() {return this->c.end();}
 };
 
 
